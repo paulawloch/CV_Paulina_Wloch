@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Paulina Włoch, Financial and Data Analyst focused on financial modelling, analytics and reporting automation.">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>Paulina Włoch | Financial &amp; Data Analyst</title>
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --white: #ffffff;
+      --ink: #202020;
+      --muted: #202020;
+      --line: #d7dadf;
+      --green: #202020;
+      --green-dark: #202020;
+      --lime: #d7dadf;
+      --orange: #d7dadf;
+      --soft: #d7dadf;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(246, 241, 231, .94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(32, 32, 32, .1);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--white); background: var(--green); font-size: 12px; letter-spacing: 0; }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
+    .nav-links a { font-size: 13px; text-decoration: none; color: var(--muted); }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .contact-link { color: var(--green); font-weight: 700; }
+    .hero { padding: clamp(66px, 10vw, 124px) 0 70px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.18fr .82fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--orange); }
+    h1 { margin: 22px 0 16px; max-width: 680px; font-size: clamp(52px, 7vw, 88px); line-height: .98; letter-spacing: -.075em; font-weight: 650; }
+    h1 span { display: block; color: var(--green); font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.065em; }
+    .hero-copy { max-width: 610px; margin: 0; color: #202020; font-size: clamp(16px, 1.8vw, 19px); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 1px solid var(--green); border-radius: 4px; background: var(--green); color: white; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .18s, transform .18s; }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button.secondary { background: transparent; color: var(--green); }
+    .button.secondary:hover { background: var(--soft); }
+    .visual { min-height: 370px; position: relative; display: grid; place-items: center; }
+    .portrait-slot { position: relative; width: min(330px, 82%); aspect-ratio: 4 / 5; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); background: var(--white); box-shadow: 18px 22px 0 rgba(215, 218, 223, .85); text-align: center; }
+    .portrait-slot::before, .portrait-slot::after { content: ""; position: absolute; border: 1px solid var(--line); border-radius: 50%; }
+    .portrait-slot::before { width: 210px; height: 210px; }
+    .portrait-slot::after { width: 150px; height: 150px; border-style: dashed; }
+    .portrait-slot img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; }
+    .photo-note { position: relative; z-index: 1; display: grid; justify-items: center; gap: 14px; padding: 20px; }
+    .photo-monogram { display: grid; place-items: center; width: 68px; height: 68px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 24px; }
+    .photo-note small { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .12em; line-height: 1.7; text-transform: uppercase; }
+    .section { padding: 82px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .58fr 1.42fr; gap: 28px; margin-bottom: 38px; align-items: start; }
+    .section-number { color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    h2 { margin: 0; font-family: var(--serif); font-size: clamp(35px, 4.3vw, 53px); line-height: 1.05; letter-spacing: -.045em; font-weight: 400; }
+    .section-intro { max-width: 710px; margin: 14px 0 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-left: calc(29% + 14px); }
+    .about-grid p { margin: 0; color: #202020; }
+    .impact-row { margin: 42px 0 0 calc(29% + 14px); display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .impact { padding: 20px 18px 20px 0; }
+    .impact + .impact { padding-left: 20px; border-left: 1px solid var(--line); }
+    .impact strong { display: block; color: var(--green); font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.1; }
+    .impact span { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; }
+    .timeline { margin-left: calc(29% + 14px); border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 170px 1fr; gap: 30px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .role-date { color: var(--green); font-size: 12px; font-weight: 750; }
+    .role-title { margin: 0; font-size: 19px; letter-spacing: -.02em; }
+    .role-company { margin: 4px 0 17px; color: var(--muted); font-size: 13px; }
+    .role ul { padding-left: 18px; margin: 0; color: #202020; font-size: 14px; }
+    .role li { margin: 0 0 10px; padding-left: 4px; }
+    .role li::marker { color: var(--orange); }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-left: calc(29% + 14px); }
+    .detail-block { border-top: 1px solid var(--line); padding-top: 18px; }
+    .detail-block h3 { margin: 0 0 17px; color: var(--green); font-size: 12px; letter-spacing: .13em; text-transform: uppercase; }
+    .education-item { margin-bottom: 20px; }
+    .education-item strong { display: block; font-size: 14px; }
+    .education-item span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .education-item p { margin: 5px 0 0; color: #202020; font-size: 13px; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 7px 10px; border: 1px solid #d7dadf; border-radius: 2px; color: #202020; background: rgba(255,255,255,.38); font-size: 12px; }
+    .subskill { margin: 22px 0 9px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .extra-list { padding-left: 18px; margin: 0; color: #202020; font-size: 13px; }
+    .extra-list li { margin-bottom: 10px; }
+    .courses { margin: 0; color: #202020; font-size: 13px; }
+    .contact { padding: 76px 0 84px; background: var(--soft); color: var(--ink); }
+    .contact-inner { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+    .contact .eyebrow { color: var(--ink); }
+    .contact h2 { max-width: 620px; margin-top: 17px; }
+    .contact-copy { margin: 15px 0 0; max-width: 500px; color: var(--muted); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .contact .button { border-color: var(--line); background: var(--line); color: var(--ink); }
+    .contact .button:hover { background: var(--white); }
+    .contact .button.secondary { border-color: var(--ink); background: transparent; color: var(--ink); }
+    .contact .button.secondary:hover { background: var(--white); }
+    footer { padding: 20px 0; background: var(--line); color: var(--ink); font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .back-top { color: white; text-decoration: none; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 36px, 600px); }
+      .nav { min-height: 64px; align-items: flex-start; padding: 15px 0; }
+      .nav-links { justify-content: flex-end; flex-wrap: wrap; gap: 8px 15px; }
+      .nav-links a { font-size: 11px; }
+      .brand { font-size: 13px; flex: 0 0 auto; }
+      .brand-mark { width: 30px; height: 30px; }
+      .hero { padding-top: 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 14px; }
+      .visual { min-height: 330px; }
+      .section { padding: 62px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; }
+      .about-grid, .impact-row, .timeline, .detail-grid { margin-left: 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 16px; }
+      .role { grid-template-columns: 1fr; gap: 8px; }
+      .detail-grid { grid-template-columns: 1fr; gap: 32px; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 430px) {
+      .nav { display: block; }
+      .nav-links { justify-content: flex-start; margin-top: 11px; }
+      .impact-row { grid-template-columns: 1fr; }
+      .impact, .impact + .impact { padding: 14px 0; border-left: 0; }
+      .impact + .impact { border-top: 1px solid var(--line); }
+      .label-left { left: -4%; } .label-right { right: -4%; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: white; color: #202020; font-size: 10pt; }
+      .topbar, .actions, .contact-actions, footer { display: none !important; }
+      .shell { width: 100%; }
+      .hero, .section, .contact { padding: 24px 0; background: white; color: #202020; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .visual { display: none; }
+      .contact-copy { color: #202020; }
+      .section { break-inside: avoid; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Paulina Włoch, home"><span class="brand-mark">PW</span><span>Paulina Włoch</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#education">Education</a>
+        <a class="contact-link" href="#contact">Contact ↗</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="top">
+    <header class="hero shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Financial &amp; Data Analyst</div>
+          <h1>Paulina <span>Włoch</span></h1>
+          <p class="hero-copy">I turn complex financial and operational data into clear decisions. My work sits at the intersection of financial planning, analytics and practical automation.</p>
+          <div class="actions">
+            <a class="button" href="mailto:paulinaw98@onet.pl">Get in touch <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="button secondary" href="#experience">Explore my work <span aria-hidden="true">&nbsp;↓</span></a>
+          </div>
+        </div>
+        <div class="visual">
+          <div class="portrait-slot" role="img" aria-label="Placeholder for Paulina Włoch's photo">
+            <!-- To add your photo, replace this placeholder with: <img src="photo.png" alt="Paulina Włoch"> -->
+            <div class="photo-note"><span class="photo-monogram">PW</span><small>Your photo<br>Replace this area with your image</small></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">01 / ABOUT</div>
+          <div>
+            <h2>Finance-minded.<br>Data-driven.</h2>
+            <p class="section-intro">Four years of experience combining financial analysis, modelling and reporting with hands-on data skills.</p>
+          </div>
+        </div>
+        <div class="about-grid">
+          <p>I work across the full analytical process: connecting data from different systems, building reliable models, automating recurring work and explaining what the results mean to decision-makers.</p>
+          <p>I quickly get to grips with new business models and enjoy making complex information useful, whether that means a long-term cash flow forecast, a management dashboard or a more efficient reporting process.</p>
+        </div>
+        <div class="impact-row" aria-label="Selected impact">
+          <div class="impact"><strong>10 years</strong><span>Cash flow forecast horizon</span></div>
+          <div class="impact"><strong>2 days → 1 hour</strong><span>Automated statutory report preparation</span></div>
+          <div class="impact"><strong>~2 weeks</strong><span>Effort saved per budget cycle</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">02 / EXPERIENCE</div>
+          <div>
+            <h2>Making analysis<br>work in practice.</h2>
+            <p class="section-intro">Financial planning, data integration and reporting automation in the energy business.</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="role">
+            <div class="role-date">NOV 2022 — PRESENT</div>
+            <div>
+              <h3 class="role-title">Financial / Data Analyst</h3>
+              <p class="role-company">Financial Planning and Analysis · Axpo Polska sp. z o.o. · Warsaw, Poland</p>
+              <ul>
+                <li>Own the end-to-end monthly cash flow forecast over a 10-year horizon, covering signed and new trading sales, CAPEX, OPEX, VAT, collateral, intercompany flows and financing repayments.</li>
+                <li>Integrate bank, Endur (OLAP cube), accounting and ECB FX data in Google Cloud Platform (BigQuery). Built scheduled Python ETL pipelines sourcing Snowflake, Microsoft SQL Server and accounting data, using NBP, GUS and ECB APIs.</li>
+                <li>Build and maintain daily refreshed Power BI reporting for forecast-versus-actual variance analysis and forecast changes, presenting insights to management, treasury and group headquarters.</li>
+                <li>Automated budget consolidation with a standardized collection template and Power Query, reducing the workload from three people to one and saving approximately two person-weeks per budget cycle.</li>
+                <li>Automated the Energy Market Agency (ARE) statistical report with a modular Python solution, validation workbook and system-upload file, cutting preparation time from two days to one hour.</li>
+                <li>Delivered dashboards for OPEX budget, headcount budget versus actual across four financial years, and sales invoice tracking linking invoices, bank payments and processing status.</li>
+                <li>Prepare management reports, financial benchmarking across energy trading companies and ad hoc cost analyses; developed Python-based bank transaction categorization.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="role">
+            <div class="role-date">ADDITIONAL ACTIVITIES</div>
+            <div>
+              <h3 class="role-title">OKR Coach &amp; Team Coordinator</h3>
+              <p class="role-company">Axpo Polska sp. z o.o.</p>
+              <ul>
+                <li>Guide teams in setting and achieving key performance objectives.</li>
+                <li>Coordinate integration events and business dinners, supporting team connection and organisational culture.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">03 / EXPERTISE</div>
+          <div>
+            <h2>Tools for better<br>decisions.</h2>
+            <p class="section-intro">A practical toolkit spanning financial modelling, business intelligence and data engineering.</p>
+          </div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h3>Technical skills</h3>
+            <div class="skill-list">
+              <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">ETL &amp; APIs</span>
+              <span class="tag">SQL</span><span class="tag">CTEs &amp; window functions</span><span class="tag">Power BI</span>
+              <span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data modelling</span>
+              <span class="tag">Excel</span><span class="tag">Financial modelling</span><span class="tag">BigQuery</span>
+              <span class="tag">Snowflake</span><span class="tag">Microsoft SQL Server</span><span class="tag">Endur / OLAP</span>
+            </div>
+            <p class="subskill">Ways of working</p>
+            <div class="skill-list"><span class="tag">Analytical thinking</span><span class="tag">Problem-solving</span><span class="tag">Clear communication</span><span class="tag">Reliable delivery</span></div>
+          </div>
+          <div class="detail-block">
+            <h3>Languages &amp; certificates</h3>
+            <div class="education-item"><strong>Polish</strong><span>Native</span></div>
+            <div class="education-item"><strong>English</strong><span>Upper intermediate</span></div>
+            <div class="education-item"><strong>Spanish</strong><span>Intermediate · B1.2 certificate</span></div>
+            <p class="subskill">Selected courses &amp; certificates</p>
+            <p class="courses">Cambridge B2 First Certificate (FCE) · Data Science and Python in Finance and Controlling, Akademia Controllingu · Advanced Financial Reporting for Analysts, EY Academy of Business Polska · Microsoft Power BI, EY Academy of Business Polska · Instituto Cervantes de Varsovia, B1.2</p>
+            <p class="subskill">Interests</p>
+            <p class="courses">Psychology · Behavioural finance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-number">04 / EDUCATION</div>
+          <div>
+            <h2>Learning with<br>a purpose.</h2>
+            <p class="section-intro">A foundation in finance and international business, complemented by advanced data science studies.</p>
+          </div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h3>Academic background</h3>
+            <div class="education-item"><strong>Postgraduate Studies, Big Data and Data Science in Management</strong><span>Kozminski University · Oct 2023 – Mar 2025</span></div>
+            <div class="education-item"><strong>MSc, Financial Management and Accounting</strong><span>University of Warsaw · Oct 2020 – Jul 2022 · Overall score 4.57</span></div>
+            <div class="education-item"><strong>BSc, International Business</strong><span>Wroclaw University of Economics and Business · Oct 2017 – Jun 2020 · Overall score 4.64</span></div>
+          </div>
+          <div class="detail-block">
+            <h3>What I bring</h3>
+            <ul class="extra-list">
+              <li>Financial perspective grounded in formal accounting and management education.</li>
+              <li>Data capabilities developed through applied analytics and automation work.</li>
+              <li>Experience translating analysis into practical reporting for business stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell contact-inner">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let’s make the numbers useful.</h2>
+          <p class="contact-copy">For professional enquiries, please reach out by email or connect with me on LinkedIn.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:paulinaw98@onet.pl">Email Paulina ↗</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/paulinawloch" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell footer-inner"><span>© <span id="year">2026</span> Paulina Włoch</span><a class="back-top" href="#top">Back to top ↑</a></div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
